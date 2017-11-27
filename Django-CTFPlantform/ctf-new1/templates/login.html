@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+		<title>D0g3 CTF</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="shortcut icon" href="/static/index/img/head.png" type="image/x-icon">
+		<link rel="icon" href="/static/index/img/head.png" type="image/x-icon">
+		<link rel="stylesheet" href="/static/index/css/vendor/bootstrap.min.css">
+		<link rel="stylesheet" href="/static/index/css/vendor/font-awesome/css/font-awesome.min.css" />
+		<link href='/static/index/css/vendor/lato.css' rel='stylesheet' type='text/css'>
+		<link href='/static/index/css/vendor/raleway.css' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="/static/index/css/style.css">
+		<link rel="stylesheet" type="text/css" href="/static/index/css/user.css">
+    <link href="/static/regist/css/common_form.css" rel="stylesheet">
+
+
+		<script src="/static/index/js/vendor/moment.min.js"></script>
+		<script src="/static/index/js/vendor/handlebars.min.js"></script>
+		<script type="text/javascript">
+				var script_root = "";
+		</script>
+</head>
+<body>
+	<div class="body-container">
+		<div class="navbar navbar-inverse home">
+			<div class="container">
+				<div class="navbar-header">
+					<button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse" type="button">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a href="/" class="navbar-brand">D0g3 CTF</a>
+				</div>
+				<div class="navbar-collapse collapse" aria-expanded="false" style="height: 0px">
+					<ul class="nav navbar-nav">
+
+
+
+
+
+						<li><a href="/rank">Rank</a></li>
+
+						<li><a href="/notice">Notice</a></li>
+
+						<li><a href="/challenge">Challenges</a></li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+
+
+						<li><a href="/regist">Regist</a></li>
+						<li><a style="padding-left:0px;padding-right:0px;">|</a></li>
+
+						<li><a href="/login">Login</a></li>
+
+					</ul>
+				</div>
+			</div>
+		</div>
+
+
+<div class="jumbotron home">
+	<div class="container">
+		<h1>Login</h1>
+	</div>
+</div>
+<div class="container main-container">
+  <div class="content">
+      <!--img class="content-logo" src="regist/img/logo.png" alt="logo"-->
+      <!--h1 class="content-title"--><!--/h1-->
+      <div class="content-form">
+          <form method="post" action="" onsubmit="return submitTest()">
+              <div id="change_margin_1">
+                  <input class="user" type="text" name="username" placeholder="请输入用户名" onblur="oBlur_1()" onfocus="oFocus_1()">
+              </div>
+
+              <!-- input的value为空时弹出提醒 -->
+              <p id="remind_1"></p>
+              <div id="change_margin_2">
+                  <input class="password" type="password" name="password" placeholder="请输入密码" onblur="oBlur_2()" onfocus="oFocus_2()">
+              </div>
+              {{error}}
+              <!-- input的value为空时弹出提醒 -->
+              <p id="remind_4"></p>
+              <div id="change_margin_5">
+                  <input class="content-form-signup" type="submit" value="登录">
+              </div>
+          </form>
+      </div>
+
+      <div class="content-login-description">还没有账户？</div>
+      <div><a class="content-login-link" href="/regist">注册</a></div>
+  </div>
+</div>
+	</div>
+	<script src="/static/index/js/vendor/jquery.min.js"></script>
+	<script src="/static/index/js/vendor/marked.min.js"></script>
+	<script src="/static/index/js/vendor/bootstrap.min.js"></script>
+
+<script src="/static/index/js/style.js"></script>
+<script>
+	if (window.location.hash == "#frame"){
+		$('.top-bar').hide()
+	}
+</script>
+
+
+
+</body>
+</html>

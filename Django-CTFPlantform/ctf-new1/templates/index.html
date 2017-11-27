@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<title>D0g3 CTF</title>
+		<meta charset="utf-8">
+	  <link rel="shortcut icon" href="/static/index/img/favicon.png">
+		<link rel="shortcut icon" href="/static/index/img/head.png" type="image/x-icon">
+		<link rel="icon" href="/static/index/img/head.png" type="image/x-icon">
+		<link rel="stylesheet" href="/static/index/css/vendor/bootstrap.min.css">
+		<link rel="stylesheet" href="/static/index/css/vendor/font-awesome/css/font-awesome.min.css" />
+		<link href='/static/index/css/vendor/lato.css' rel='stylesheet' type='text/css'>
+		<link href='/static/index/css/vendor/raleway.css' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="/static/index/css/style.css">
+		<link rel="stylesheet" type="text/css" href="/static/index/css/user.css">
+	    <link rel="stylesheet" href="/static/index/css/style1.css">
+
+
+		<script src="/static/index/js/vendor/moment.min.js"></script>
+		<script src="/static/index/js/vendor/handlebars.min.js"></script>
+		<script type="text/javascript">
+				var script_root = "";
+		</script>
+		<style>
+			body{background-color: #292929}
+			*{padding:0;margin:0;}
+			.wrapper{
+				width: 960px;
+				margin:0 auto;
+				line-height:36px;
+				text-align:center;
+				color:#999;
+			}
+			canvas{display:block;background: #000;}
+			.mod-botton{
+				height: 32px;
+				padding: 15px 0;
+				text-align: center;
+			}
+			#black{color:black;}
+		</style>
+</head>
+
+
+
+<body>
+	<div class="body-container">
+		<div class="navbar navbar-inverse home">
+			<div class="container">
+				<div class="navbar-header">
+					<button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse" type="button">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a href="/" class="navbar-brand">D0g3 CTF</a>
+				</div>
+				<div class="navbar-collapse collapse" aria-expanded="false" style="height: 0px">
+					<ul class="nav navbar-nav">
+
+
+
+
+
+						<li><a href="/rank">Rank</a></li>
+
+						<li><a href="/notice">Notice</a></li>
+
+						<li><a href="/challenge">Challenges</a></li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+
+
+
+						
+{% if request.user.is_authenticated %}
+						
+<li><a href="/logout">Logout</a></li>
+						
+{% else %}
+						
+<li><a href="/regist">Resgist</a></li>
+						
+<li><a href="#">|</a></li>
+						
+<li><a href="/login">Login</a></li>
+						
+{% endif %}
+
+					</ul>
+				</div>
+			</div>
+		</div>
+
+
+	<div id="three-container">
+		<div class="wrapper">
+			<canvas id="canvas" width="960" height="640">不支持画布</canvas>
+			<p><span id="black">按［空格］暂停或继续</span></p>
+		</div>
+	</div>
+	</div>
+	<script src="/static/index/js/vendor/jquery.min.js"></script>
+	<script src="/static/index/js/vendor/marked.min.js"></script>
+	<script src="/static/index/js/vendor/bootstrap.min.js"></script>
+	<script src="http://www.jq22.com/jquery/jquery-1.9.1.js"></script>
+	<script src="http://www.jq22.com/jquery/jquery-ui-1.11.0.js"></script>
+	<script src="/static/index/js/game.js"></script>
+	<script src="/static/index/js/indexGame.js"></script>
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,163 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+		<title>Admin Panel</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="shortcut icon" href="/static/index/img/head.png" type="image/x-icon">
+		<link rel="icon" href="/static/index/img/head.png" type="image/x-icon">
+		<link rel="stylesheet" href="/static/admin/static/css/vendor/bootstrap.min.css">
+		<link rel="stylesheet" href="/static/admin/static/css/vendor/font-awesome/css/font-awesome.min.css" />
+		<link rel="stylesheet" href="/static/admin/static/css/style.css">
+		<link href='/static/admin/static/css/vendor/lato.css' rel='stylesheet' type='text/css'>
+		<link href='/static/admin/static/css/vendor/raleway.css' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="admin/static/css/style.css">
+		<script src="/static/admin/static/js/vendor/moment.min.js"></script>
+		<script src="/static/admin/static/js/vendor/moment-timezone-with-data.min.js"></script>
+		<script src="/static/admin/static/js/vendor/handlebars.min.js"></script>
+		<script type="text/javascript">
+				var script_root = "";
+		</script>
+
+<style>
+.btn-primary { background-color: #337ab7; }
+.btn-danger { background-color: #d9534f; }
+.col-md-4 { margin-bottom: 15px; }
+.key-remove-button { margin-top: 10px; }
+.delete-tag { color: white; margin-left: 3px; cursor: pointer; }
+</style>
+
+</head>
+
+<body>
+	<div class="body-container">
+		<div class="navbar navbar-inverse home">
+			<div class="container">
+				<div class="navbar-header">
+					<button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse" type="button">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a href="/" class="navbar-brand">D0g3 Team</a>
+				</div>
+				<div class="navbar-collapse collapse" aria-expanded="false" style="height: 0px">
+					<ul class="nav navbar-nav navbar-nav-right">
+						<li><a href="/admin/graphs"></a></li>
+						<li>
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+									 aria-expanded="false"> <span class="caret"></span></a>
+								<ul class="dropdown-menu">
+										<li><a href="/admin/pages"></a></li>
+										<li><a href="/admin/pages?mode=create"></a></li>
+								</ul>
+						</li>
+						<li><a href="/admin/teams">Teams</a></li>
+						<li><a href="/admin/scoreboard">Scoreboard</a></li>
+						<li><a href="/admin/chals">Challenges</a></li>
+						<li><a href="/admin/statistics">Statistics</a></li>
+						<li><a href="/admin/config">Config</a></li>
+
+
+
+
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="container main-container">
+
+<div id="create-challenge" class="container main-container">
+	<h1 class="text-center">Create Challenge</h1>
+	<div class="row">
+		<div class="col-md-6 col-md-offset-3">
+
+		</div>
+	</div>
+	<br>
+	<div class="row">
+		<div id="create-chal-entry-div">
+      <form method="POST" action="" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="name">Name
+                <i class="fa fa-question-circle gray-text" data-toggle="tooltip" data-placement="right" title="" data-original-title="The name of your challenge"></i>
+            </label>
+            <input type="text" class="form-control" name="name" placeholder="Enter challenge name">
+        </div>
+        <div class="form-group">
+            <label for="category">Category
+                <i class="fa fa-question-circle gray-text" data-toggle="tooltip" data-placement="right" title="" data-original-title="The category of your challenge"></i>
+            </label>
+            <input type="text" class="form-control" name="category" placeholder="Enter challenge category">
+        </div>
+
+        <ul class="nav nav-tabs" role="tablist" id="new-desc-edit">
+            <li role="presentation" class="active"><a href="#new-desc-write" aria-controls="home" role="tab" data-toggle="tab">Write</a></li>
+            <li role="presentation"><a href="#new-desc-preview" aria-controls="home" role="tab" data-toggle="tab">Preview</a></li>
+        </ul>
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="new-desc-write">
+                <div class="form-group">
+                    <label for="message-text" class="control-label">Message:
+                        <i class="fa fa-question-circle gray-text" data-toggle="tooltip" data-placement="right" title="" data-original-title="Use this to give a brief introduction to your challenge. The description supports HTML and Markdown."></i>
+                    </label>
+                    <textarea id="new-desc-editor" class="form-control" name="desc" rows="10"></textarea>
+                </div>
+            </div>
+            <div role="tabpanel" class="tab-pane content" id="new-desc-preview" style="height:234px; overflow-y: scroll;">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="value">Value
+                <i class="fa fa-question-circle gray-text" data-toggle="tooltip" data-placement="right" title="" data-original-title="This is how many points are rewarded for solving this challenge."></i>
+            </label>
+            <input type="number" class="form-control" name="value" placeholder="Enter value" required="">
+        </div>
+        <div class="row">
+            <div class="form-group">
+                <div class="col-md-8">
+                    <label for="key">Flag
+                        <i class="fa fa-question-circle gray-text" data-toggle="tooltip" data-placement="right" title="" data-original-title="This is the flag/solution for the challenge."></i>
+                    </label>
+                    <input type="text" class="form-control" name="key" placeholder="Enter key">
+                </div>
+            </div>
+        </div>
+
+
+        <div style="text-align:center">
+            <button class="btn btn-theme btn-outlined create-challenge-submit" type="submit">Create</button>
+        </div>
+    </form>
+		</div>
+	</div>
+</div>
+
+		</div>
+
+		<div class="navbar navbar-bottom footer">
+			<p class="text-muted text-center">
+				<a style="text-decoration:none;" href=""><sub></sub></a>
+			</p>
+		</div>
+	</div>
+		<script src="/static/admin/static/js/vendor/jquery.min.js"></script>
+		<script src="/static/admin/static/js/vendor/marked.min.js"></script>
+		<script src="/static/admin/static/js/vendor/bootstrap.min.js"></script>
+		<script src="/static/admin/static/js/main.js"></script>
+		<script src="/static/admin/static/js/utils.js"></script>
+
+	<script src="/static/admin/js/utils.js"></script>
+	<script src="/static/admin/js/vendor/codemirror.min.js"></script>
+	<script>
+	nonce = "2be92358b089fa179e5b630a6f0a470c3d9ffaea9a174bf8e14c8841e6b079798b448f756b27ec55228230ef1a73e3fa2d1cafd0dc5efb804f569f691cc6d68d";
+	</script>
+	<script src="/static/admin/static/js/chal-new.js"></script>
+
+</body>
+
+</html>
